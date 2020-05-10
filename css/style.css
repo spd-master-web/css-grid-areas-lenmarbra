@@ -15,31 +15,34 @@ body{
 }
 #wrapper{
   display: grid;
-  grid-template-columns: repeat(12, auto);
-  grid-auto-rows: minmax(100px, auto);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 200px 1fr 200px;
   grid-gap: 16px;
   width: 100%;
   /* max-width: 1280px; */
   grid-template-areas:
-      "header header header header header header header header header header header header"
-      "main main main main main main main main aside aside aside aside" 
-      "main main main main main main main main aside aside aside aside" 
-      "main main main main main main main main aside aside aside aside" 
-      "main main main main main main main main aside aside aside aside" 
-      "main main main main main main main main aside aside aside aside" 
-      "footer footer footer footer footer footer footer footer footer footer footer footer";
+      "header header header"
+      "main main aside" 
+      "footer footer footer";
   text-transform: uppercase;
   vertical-align: middle;
+}
+
+#wrapper > *{
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 
     header{
       background-color: #EDA3FF;
       grid-area: header;
-      vertical-align: middle;
+      min-height: 200px;
     }
     main{
       background-color: #C834E3;
       grid-area: main;
+      min-height: 368px;
     }
     aside{
       background-color: #5C34E3;
@@ -48,4 +51,5 @@ body{
     footer{
       background-color: #FFA3CA;
       grid-area: footer;
+      min-height: 200px;
     }
